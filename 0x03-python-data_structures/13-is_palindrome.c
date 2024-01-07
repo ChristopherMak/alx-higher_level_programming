@@ -34,7 +34,7 @@ int is_palindrome(listint_t **head)
 		len = len - 1;
 	}
 	reverse(&middle);
-	i = compare_lists(*head, middle, len);
+	index = compare_lists(*head, middle, len);
 
 	return (index);
 }
