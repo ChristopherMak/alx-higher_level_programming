@@ -5,15 +5,14 @@ void reverse(listint_t **head);
 int compare_lists(listint_t *head, listint_t *middle, int len);
 
 /**
- * is_palindrome - checks if a singly linked list is a palidrome
- *
- * @head: pointer to pointer of the first node in the list passed
- *
- * Return: 0 if a palidrome isnt detected and 1 if yes
+ * is_palindrome - A funct that checks for palindrome in a singly linked list.
+ * @head: A pointer to the pointer of the first node in the passed list.
+ * Return: 0 if a palidrome and 1 upon success.
  */
+
 int is_palindrome(listint_t **head)
 {
-	int len, i;
+	int len, index;
 	listint_t *tmp;
 	listint_t *middle;
 
@@ -27,7 +26,7 @@ int is_palindrome(listint_t **head)
 
 	len = len / 2;
 
-	for (i = 1; i < len; i++)
+	for (index = 1; index < len; index++)
 		middle = middle->next;
 	if (len % 2 != 0 && len != 1)
 	{
@@ -37,23 +36,24 @@ int is_palindrome(listint_t **head)
 	reverse(&middle);
 	i = compare_lists(*head, middle, len);
 
-	return (i);
+	return (index);
 }
 
 /**
- * compare_lists - compare two lists
- * @head: pointer to the head node
- * @middle: pointer to the middle node
- * @len: length of the list
- * Return: if the same 1, if not 0
+ * compare_lists - A funct that compare two lists.
+ * @head: A pointer to the head node.
+ * @middle: A pointer to the middle node.
+ * @len: The length of the list.
+ * Return: 1 if identical and 0 if not.
  */
+
 int compare_lists(listint_t *head, listint_t *middle, int len)
 {
-	int i;
+	int index;
 
 	if (head == NULL || middle == NULL)
 		return (1);
-	for (i = 0; i < len; i++)
+	for (index = 0; index < len; index++)
 	{
 		if (head->n != middle->n)
 			return (0);
@@ -64,9 +64,10 @@ int compare_lists(listint_t *head, listint_t *middle, int len)
 }
 
 /**
- * reverse - reverse a list
- * @head: pointer to the head to reverse
+ * reverse - A funct that reverses a list.
+ * @head: A pointer to the head to reverse.
  */
+
 void reverse(listint_t **head)
 {
 	listint_t *current;
