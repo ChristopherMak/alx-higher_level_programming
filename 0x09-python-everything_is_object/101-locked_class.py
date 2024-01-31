@@ -1,3 +1,13 @@
 #!/usr/bin/python3
-class LockedClass(object):
-    __slots__ = 'first_name'
+"""
+Locked class
+"""
+
+
+class LockedClass:
+    """
+    Prevent user from creating a new instace
+    dynamically
+    """
+
+    __slots__ = "first_name"
