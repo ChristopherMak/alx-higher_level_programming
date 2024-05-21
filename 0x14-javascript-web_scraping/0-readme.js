@@ -1,14 +1,12 @@
 #!/usr/bin/node
+// Read from file
 
-const fs = require('fs');
-
-fs.readFile(process.argv[2], 'utf-8', function (error, content) {
-
-  if (error) {
-    
-    console.error('Error reading the file:', error);
-}   else {
-
-    console.log(content);
-  }
-});
+const filesys = require('fs');
+filesys.readFile(process.argv[2], 'utf-8',
+  function (err, data) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(data);
+  });
